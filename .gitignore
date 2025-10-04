@@ -1,4 +1,11 @@
-.DS_Store
-.astro
-.vscode
-node_modules
+*
+**/*
+
+!pages/
+!pages_components/
+!scripts/
+!styling/
+!*.html
+!.gitignore
+!*.css
+!*.js
