@@ -1,11 +1,19 @@
 
+:root {
+    --light-green: #53FF45;
+    --white: #FEFCFB;
+    --magenta: #D30C7B;
+    --dark-green: #1B998B;
+    --dark-blue: #0A1128;
+}
+
 html {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: #0A1128;
+    background-color: var(--dark-blue);
     color: #FEFCFB;
 }
 
@@ -13,4 +21,5 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    outline: solid ;
 }
