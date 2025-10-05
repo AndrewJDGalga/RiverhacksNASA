@@ -5,7 +5,12 @@
 !pages_components/
 !scripts/
 !styling/
+!public/
 !*.html
 !.gitignore
 !*.css
 !*.js
+!*.jpg
+!*.png
+!*.ico
+!*.webp
