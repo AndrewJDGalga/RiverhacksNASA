@@ -54,6 +54,7 @@
             border: 2px solid var(--border);
             text-align: center;
             transition: all 0.3s;
+            cursor: pointer;
         }
 
         .feature-card:hover {
@@ -126,7 +127,7 @@
                             <li onclick="navigate('home')">Home</li>
                             <li onclick="navigate('stories')">Stories</li>
                             <li onclick="navigate('resources')">Resources</li>
-                            <li onclick="navigate('contact')">Contact Us</li>
+                            <li onclick="navigate('quiz')">Cosmic Quiz</li>
                         </ul>
                     </div>
                 </div>
@@ -147,10 +148,10 @@
             </section>
 
             <section class="features">
-                <div class="feature-card">
+                <div class="feature-card" onclick="window.location.href='pages/cosmic_quiz.html'">
                     <div class="feature-icon">🔭</div>
                     <h3>Interactive Learning</h3>
-                    <p>Navigate through stories at your own pace with our easy-to-use interface.</p>
+                    <p>Test your knowledge with our Cosmic Quiz! Challenge yourself with questions about solar flares and space weather.</p>
                 </div>
             </section>
         </main>

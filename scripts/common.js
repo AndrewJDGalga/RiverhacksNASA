@@ -63,6 +63,7 @@ function navigate(page) {
         'home': isInPagesFolder ? '../index.html' : 'index.html',
         'stories': isInPagesFolder ? 'stories_page_template.html' : 'pages/stories_page_template.html',
         'resources': isInPagesFolder ? 'resources_page.html' : 'pages/resources_page.html',
+        'quiz': isInPagesFolder ? 'cosmic_quiz.html' : 'pages/cosmic_quiz.html',
         'contact': isInPagesFolder ? 'contact.html' : 'pages/contact.html'
     };
     
