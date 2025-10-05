@@ -59,6 +59,32 @@ form {
     min-width: 64px;
 }
 
+.header_nav-top_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.pages_header-nav {
+    position: absolute;
+}
+.pages_header-nav ul {
+    list-style: none;
+    padding: 0;
+}
+.pages_header-nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 4px;
+    margin: 3px;
+}
+.pages_header-nav a:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
 .header_nav-btn {
     background-color: transparent;
     min-width: 48px;
