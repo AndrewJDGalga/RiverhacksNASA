@@ -18,12 +18,28 @@ body {
 }
 
 form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    outline: solid ;
+    margin: 0 auto;
+    width: max-content;
+    border: 2px solid var(--dark-green);
+    border-radius: 8px;
+    padding: 3px;
 }
 
 .hidden {
     display: none;
+}
+
+.pages_qa-imgs_qs {
+    display: flex;
+    flex-direction: row;
+}
+
+.pages_qa-questions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.pages_qa-astro_img {
+    width: 64px;
 }
