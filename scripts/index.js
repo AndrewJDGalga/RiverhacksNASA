@@ -29,4 +29,13 @@ if(pageQuestion) {
     }
 }
 
-
+//header
+const headerNavBtn = document.querySelector(".header_nav-btn");
+const headerNavMenu = document.querySelector(".pages_header-mobile"); 
+headerNavBtn.onclick = () =>{
+    if(headerNavMenu.classList.contains("hidden")){
+        headerNavMenu.classList.remove("hidden");
+    }else {
+        headerNavMenu.classList.add("hidden");
+    }
+}
