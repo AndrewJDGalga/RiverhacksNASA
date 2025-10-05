@@ -90,12 +90,28 @@
             font-size: 18px;
             cursor: pointer;
             transition: all 0.3s;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .image-card .placeholder-text {
+            position: relative;
+            z-index: 1;
         }
 
         .image-card:hover {
             transform: scale(1.05);
             border-color: var(--accent);
-            background: var(--hover-bg);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .resources {
@@ -162,7 +178,7 @@
                             <li onclick="navigate('home')">Home</li>
                             <li onclick="navigate('stories')">Stories</li>
                             <li onclick="navigate('resources')">Resources</li>
-                            <li onclick="navigate('contact')">Contact Us</li>
+                            <li onclick="navigate('quiz')">Cosmic Quiz</li>
                         </ul>
                     </div>
                 </div>
@@ -188,19 +204,25 @@
             </aside>
 
             <div class="image-grid">
-                <div class="image-card" onclick="goToStory(1)">Image</div>
-                <div class="image-card" onclick="goToStory(2)">Image</div>
-                <div class="image-card" onclick="goToStory(3)">Image</div>
-                <div class="image-card" onclick="goToStory(4)">Image</div>
+                <div class="image-card" onclick="goToStory(1)">
+                    <img src="../public/astro_dabbing.png" alt="Solar Flares">
+                </div>
+                <div class="image-card" onclick="goToStory(2)">
+                    <span class="placeholder-text">Image</span>
+                </div>
+                <div class="image-card" onclick="goToStory(3)">
+                    <span class="placeholder-text">Image</span>
+                </div>
+                <div class="image-card" onclick="goToStory(4)">
+                    <span class="placeholder-text">Image</span>
+                </div>
             </div>
         </div>
 
         <section class="resources">
             <h2>Resources</h2>
             <div class="appendix-links">
-                <a href="#appendix1">Appendix 1</a>
-                <a href="#appendix2">Appendix 2</a>
-                <a href="#appendix3">Appendix 3</a>
+                <a href="resources_page.html">View All Resources</a>
             </div>
         </section>
     </div>
