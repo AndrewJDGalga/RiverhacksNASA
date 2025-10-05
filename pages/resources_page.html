@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Astro - Resources</title>
+    <link rel="stylesheet" href="../styling/styles.css">
+    <style>
+        /* Resources Page Specific Styles */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .resources-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resource-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .resource-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .resource-card h2 {
+            color: var(--accent);
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .resource-card h2 a {
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resource-card h2 a:hover {
+            text-decoration: underline;
+        }
+
+        .external-link-icon {
+            font-size: 16px;
+        }
+
+        .resource-card p {
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .section-divider {
+            border: none;
+            height: 2px;
+            background: var(--border);
+            margin: 40px 0;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .resource-card {
+                padding: 20px;
+            }
+
+            .resource-card h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sunset"></div>
+    <div class="sun"></div>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <div class="hamburger-container">
+                    <div class="hamburger-menu" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <div class="menu-dropdown" id="menuDropdown">
+                        <ul>
+                            <li onclick="navigate('home')">Home</li>
+                            <li onclick="navigate('stories')">Stories</li>
+                            <li onclick="navigate('resources')">Resources</li>
+                            <li onclick="navigate('contact')">Contact Us</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="logo">
+                    <span class="logo-text">★</span>
+                </div>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <h1>NASA Data & Resources</h1>
+                <p>Explore official NASA resources about space weather and our solar system</p>
+            </div>
+
+            <div class="resources-container">
+                <a href="stories_page_template.html" class="back-button">
+                    ← Back to Stories
+                </a>
+
+                <div class="resource-card">
+                    <h2>
+                        <a href="https://www.nasa.gov/spaceweather/" target="_blank" rel="noopener noreferrer">
+                            NASA Space Weather Website
+                            <span class="external-link-icon">🔗</span>
+                        </a>
+                    </h2>
+                    <p>This page provides a general overview of what space weather is and why it is important, as well as the work that the NASA Space Weather Program is doing to support end-user communities impacted by space weather events.</p>
+                </div>
+
+                <div class="resource-card">
+                    <h2>
+                        <a href="https://www.nasa.gov/science-research/heliophysics/solar-storms-and-flares/" target="_blank" rel="noopener noreferrer">
+                            Solar Storms and Flares
+                            <span class="external-link-icon">🔗</span>
+                        </a>
+                    </h2>
+                    <p>This page explains many of the varying space weather phenomena at a high level, including solar flares and coronal mass ejections (CMEs); it also explains the solar activity cycle.</p>
+                </div>
+
+                <div class="resource-card">
+                    <h2>
+                        <a href="https://ntrs.nasa.gov/api/citations/20240005634/downloads/SWAG%20Survey%20Results%202024.pdf" target="_blank" rel="noopener noreferrer">
+                            Results of the First National Survey of User Needs for Space Weather
+                            <span class="external-link-icon">🔗</span>
+                        </a>
+                    </h2>
+                    <p>This document presents the findings of the 2024 Space Weather Advisory Group (SWAG) User Needs Survey, the culmination of an extensive interview process designed to identify the precise needs of diverse end-users across various industries.</p>
+                </div>
+
+                <div class="resource-card">
+                    <h2>
+                        <a href="https://science.nasa.gov/mission/spaceweathercoe/" target="_blank" rel="noopener noreferrer">
+                            Space Weather Centers of Excellence
+                            <span class="external-link-icon">🔗</span>
+                        </a>
+                    </h2>
+                    <p>This page highlights the three individual projects that comprise NASA's Space Weather Centers of Excellence, each focused on mitigating impacts of space weather on our assets in space.</p>
+                </div>
+
+                <div class="resource-card">
+                    <h2>
+                        <a href="https://science.nasa.gov/mission/heliophysics-fleet/" target="_blank" rel="noopener noreferrer">
+                            NASA Heliophysics Fleet
+                            <span class="external-link-icon">🔗</span>
+                        </a>
+                    </h2>
+                    <p>This resource provides a visual representation of the current NASA Heliophysics mission fleet.</p>
+                </div>
+
+                <div class="resource-card">
+                    <h2>
+                        <a href="https://www.swpc.noaa.gov/" target="_blank" rel="noopener noreferrer">
+                            National Oceanic and Atmospheric Administration (NOAA) Space Weather Prediction Center
+                            <span class="external-link-icon">🔗</span>
+                        </a>
+                    </h2>
+                    <p>This is a web page from the NOAA Space Weather Prediction Center (SWPC), a close partner of the NASA Space Weather Program. This page provides forecasts and data on space weather phenomena, crucial for mitigating impacts.</p>
+                </div>
+
+                <hr class="section-divider">
+
+                <div style="text-align: center; padding: 20px;">
+                    <p style="color: var(--text-secondary); font-size: 14px;">
+                        All resources provided by NASA and NOAA. Links open in new tabs.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../scripts/common.js"></script>
+</body>
+</html>
