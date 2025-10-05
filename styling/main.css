@@ -58,3 +58,19 @@ form {
     width: 12vw;
     min-width: 64px;
 }
+
+.header_nav-btn {
+    background-color: transparent;
+    min-width: 48px;
+    min-height: 48px;
+    border: none;
+}
+.header_nav-btn svg {
+    fill: var(--light-green);
+}
+.header_nav-btn:hover {
+    background-color: var(--light-green);
+}
+.header_nav-btn:hover svg {
+    fill: var(--dark-blue);
+}
