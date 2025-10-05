@@ -19,7 +19,7 @@ body {
 
 form {
     margin: 0 auto;
-    width: max-content;
+    max-width: 80ch;
     border: 2px solid var(--dark-green);
     border-radius: 8px;
     padding: 3px;
@@ -29,9 +29,12 @@ form {
     display: none;
 }
 
-.pages_qa-imgs_qs {
+.pages_qa-imgs-q {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    padding: 8px;
+    gap: 4px;
 }
 
 .pages_qa-questions {
@@ -41,5 +44,6 @@ form {
 }
 
 .pages_qa-astro_img {
-    width: 64px;
+    width: 12vw;
+    min-width: 64px;
 }
