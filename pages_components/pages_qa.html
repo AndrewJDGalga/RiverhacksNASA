@@ -1,16 +1,24 @@
 <link href="../styling/main.css" rel="stylesheet">
 
+<!--QA Template-->
 <form action="" method="post">
-    <button type="submit" data-option="opt1">{{--OPTION 1--}}</button>
-    <button type="submit" data-option="opt2">{{--OPTION 2--}}</button>
-    <button type="submit" data-option="opt3">{{--OPTION 3--}}</button>
-    <button type="submit" data-option="opt4">{{--OPTION 4--}}</button>
+    <fieldset>
+    <img src="../public/astro_thinking.png" alt="Astro thinking" class="pages_qa-astro_img">
+    <p>{{--OPTION 1--}}</p>
+        <fieldset class="">
+            <button type="submit" data-option="opt1">{{--OPTION 1--}}</button>
+            <button type="submit" data-option="opt2">{{--OPTION 2--}}</button>
+            <button type="submit" data-option="opt3">{{--OPTION 3--}}</button>
+            <button type="submit" data-option="opt4">{{--OPTION 4--}}</button>
+        </fieldset>
+    </fieldset>
     <div class="pages_qa-answer">
-        <p class="correct">Correct!</p>
-        <p class="incorrect">Incorrect.</p>
-        <div class="">
+        <p class="correct hidden">Correct!</p>
+        <p class="incorrect hidden">Incorrect.</p>
+        <div class="hidden">
             <p class="explantation">{{--FILL IN--}}</p>
             <a href={{--FILL IN--}} class="more-information">{{--FILL IN--}}</a>
         </div>
     </div>
 </form>
+<!--QA Template-->
