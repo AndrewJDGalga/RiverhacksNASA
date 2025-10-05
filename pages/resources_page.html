@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ask Astro - Resources</title>
     <link rel="stylesheet" href="../styling/styles.css">
+    <script>
+        // Apply theme immediately before page renders to prevent flash
+        (function() {
+            const savedTheme = sessionStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <style>
         /* Resources Page Specific Styles */
         .page-header {
