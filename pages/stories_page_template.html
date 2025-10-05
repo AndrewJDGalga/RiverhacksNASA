@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask Astro - Stories</title>
+    <link rel="stylesheet" href="../styling/styles.css">
+    <style>
+        /* Stories Page Specific Styles */
+        h1 {
+            text-align: center;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stories-sidebar {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .stories-sidebar h2 {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-size: 20px;
+        }
+
+        .story-list { 
+            list-style: none;
+            counter-reset: story-counter;
+        }
+
+        .story-list li {
+            padding: 12px;
+            padding-left: 35px;
+            margin-bottom: 8px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+            color: var(--text-primary);
+            position: relative;
+            counter-increment: story-counter;
+        }
+
+        .story-list li::before {
+            content: counter(story-counter) ". ";
+            position: absolute;
+            left: 12px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .story-list li:hover {
+            border-left-color: var(--accent);
+            transform: translateX(5px);
+            background: var(--hover-bg);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .image-card {
+            aspect-ratio: 16/9;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .image-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+            background: var(--hover-bg);
+        }
+
+        .resources {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .resources h2 {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .appendix-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .appendix-links a {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .appendix-links a:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .main-content { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .image-grid { 
+                grid-template-columns: 1fr; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sunset"></div>
+    <div class="sun"></div>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <div class="hamburger-container">
+                    <div class="hamburger-menu" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <div class="menu-dropdown" id="menuDropdown">
+                        <ul>
+                            <li onclick="navigate('home')">Home</li>
+                            <li onclick="navigate('stories')">Stories</li>
+                            <li onclick="navigate('resources')">Resources</li>
+                            <li onclick="navigate('contact')">Contact Us</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="logo">
+                    <span class="logo-text">★</span>
+                </div>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">🌙</button>
+        </header>
+
+        <h1>Ask Astro!</h1>
+        <p class="subtitle">Have A Cosmic Question?</p>
+
+        <div class="main-content">
+            <aside class="stories-sidebar">
+                <h2>Stories</h2>
+                <ul class="story-list">
+                    <li onclick="goToStory(1)">Solar Flares and the Northern Lights</li>
+                    <li onclick="goToStory(2)">Black Holes!</li>
+                    <li onclick="goToStory(3)">Solar Winds</li>
+                    <li onclick="goToStory(4)">The International Space Station!</li>
+                </ul>
+            </aside>
+
+            <div class="image-grid">
+                <div class="image-card" onclick="goToStory(1)">Image</div>
+                <div class="image-card" onclick="goToStory(2)">Image</div>
+                <div class="image-card" onclick="goToStory(3)">Image</div>
+                <div class="image-card" onclick="goToStory(4)">Image</div>
+            </div>
+        </div>
+
+        <section class="resources">
+            <h2>Resources</h2>
+            <div class="appendix-links">
+                <a href="#appendix1">Appendix 1</a>
+                <a href="#appendix2">Appendix 2</a>
+                <a href="#appendix3">Appendix 3</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="../scripts/common.js"></script>
+    <script>
+        function goToStory(storyNumber) {
+            // Store the story number in sessionStorage
+            sessionStorage.setItem('currentStory', storyNumber);
+            // Navigate to the story page
+            window.location.href = 'individual_story_template.html';
+        }
+    </script>
+</body>
+</html>
