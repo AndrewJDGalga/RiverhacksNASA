@@ -1,7 +1,8 @@
 <link href="../styling/main.css" rel="stylesheet">
+<script src="../scripts/index.js" defer></script>
 
 <!--QA Template-->
-<form action="" method="post">
+<form id="pages_qa" action="" method="">
     <div>
         <div class="pages_qa-imgs-q">
             <div id="pages_qa-astro_imgs">
@@ -9,16 +10,16 @@
                 <img src="../public/astro_excited.png" alt="Astro thinking"  class="pages_qa-astro_img hidden">
                 <img src="../public/astro_hands_on_hips.png" alt="Astro thinking" class="pages_qa-astro_img hidden">
             </div>
-            <p>{{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aspernatur totam similique ex non consequatur necessitatibus maiores quis numquam sequi. Consequuntur saepe quo natus, reiciendis quam veniam doloribus sunt minus! --}}</p>
+            <p id="pages_qa-question" data-answer="opt1">{{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, aspernatur totam similique ex non consequatur necessitatibus maiores quis numquam sequi. Consequuntur saepe quo natus, reiciendis quam veniam doloribus sunt minus! --}}</p>
         </div>
-        <fieldset class="pages_qa-questions">
+        <fieldset class="pages_qa-answers">
             <button type="submit" data-option="opt1">{{--OPTION 1--}}</button>
             <button type="submit" data-option="opt2">{{--OPTION 2--}}</button>
             <button type="submit" data-option="opt3">{{--OPTION 3--}}</button>
             <button type="submit" data-option="opt4">{{--OPTION 4--}}</button>
         </fieldset>
     </div>
-    <div class="pages_qa-answer">
+    <div class="pages_qa-result">
         <p class="correct hidden">Correct!</p>
         <p class="incorrect hidden">Incorrect.</p>
         <div class="hidden">

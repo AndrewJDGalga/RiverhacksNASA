@@ -29,6 +29,15 @@ form {
     display: none;
 }
 
+.correct_answer {
+    color: var(--dark-blue);
+    background-color: var(--light-green);
+}
+.incorrect_answer {
+    background-color: var(--magenta);
+    color: var(--white);
+}
+
 .pages_qa-imgs-q {
     display: flex;
     flex-direction: row;
@@ -37,7 +46,7 @@ form {
     gap: 4px;
 }
 
-.pages_qa-questions {
+.pages_qa-answers {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
